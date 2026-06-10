@@ -16,4 +16,9 @@ df -h --total| grep "/" -w | awk '{printf "Total: %s / Used: %s (%.2f%%) / Free:
 echo
 
 echo "--Top 5 Processes by CPU--"
-ps -ef --sort=-%cpu | head -6
+ps -eo pid,user,%cpu,%mem --sort=-%cpu | head -6
+
+echo
+
+echo "--Top 5 Processes by MEM--"
+ps -eo pid,user,%cpu,%mem --sort=-%mem | head -6
