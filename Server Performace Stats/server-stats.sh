@@ -12,3 +12,8 @@ echo
 
 echo "--Total Disk Usage--"
 df -h --total| grep "/" -w | awk '{printf "Total: %s / Used: %s (%.2f%%) / Free: %s (%.2f%%)\n" , $2, $3, $5, $4, $5}'
+
+echo
+
+echo "--Top 5 Processes by CPU--"
+ps -ef --sort=-%cpu | head -6
